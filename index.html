@@ -3,157 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata Lengkap Anggota</title>
+    <title>Singy Eaty Time</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
             margin: 0;
             padding: 0;
-        }
-        header {
-            background-color: #1a1a2e;
-            color: #fff;
+            background: #fff; /* background putih */
+            color: #000; /* teks hitam */
             text-align: center;
-            padding: 20px 0;
+            cursor: pointer; /* biar kelihatan bisa di-klik */
         }
-        h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        .container {
+        .logo {
+            width: 100vw;
+            height: 100vh;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            padding: 20px;
-            gap: 20px;
         }
-        .card {
-            background-color: #fff;
-            width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.2s;
-            cursor: pointer;
+        .logo img {
+            max-width: 90%; /* agar tetap responsif */
+            max-height: 80vh; /* memenuhi layar laptop */
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 1.2s ease forwards;
         }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-        .card-content {
-            padding: 15px;
-        }
-        .card-content h2 {
-            margin: 0;
-            color: #1a1a2e;
-        }
-        .card-content p {
-            margin: 5px 0;
-            color: #333;
-        }
-        .card-content span {
-            font-weight: bold;
-        }
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 10;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.7);
-        }
-        .modal-content {
-            background-color: #fff;
-            margin: 10% auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-            position: relative;
-        }
-        .close {
-            color: #aaa;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .close:hover {
-            color: #000;
+
+        /* Animasi logo */
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Biodata Lengkap Anggota Singy Eaty Time</h1>
-    </header>
+<body onclick="window.location.href='members.html'">
 
-    <div class="container">
-        <!-- Contoh card anggota -->
-        <div class="card" onclick="showModal('Rivaldo','Rivaldo Indra Yulian','Airlangga University','2002 July 5','Indonesia')">
-            <img src="RIVALDO1.jpg" alt="Rivaldo">
-            <div class="card-content">
-                <h2>Rivaldo</h2>
-            </div>
-        </div>
-
-        <div class="card" onclick="showModal('Aldo','Aldo Wahyu Hendrawan','Madiun State Polytechnic','2003 January 11','Indonesia')">
-            <img src="ALDO1.jpg" alt="Aldo">
-            <div class="card-content">
-                <h2>Aldo</h2>
-            </div>
-        </div>
-
-        <div class="card" onclick="showModal('Aura','Atma Aura Baabil Tahtanirwane','Bhakti Husada College of Health Sciences','2003 May 7','Indonesia')">
-            <img src="ATMA1.jpg" alt="Aura">
-            <div class="card-content">
-                <h2>Aura</h2>
-            </div>
-        </div>
+    <div class="logo">
+        <img src="SingyEatyTime.png" alt="Logo Vertix">
     </div>
 
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalName"></h2>
-            <p><strong>Nama Lengkap:</strong> <span id="modalFullName"></span></p>
-            <p><strong>Studi:</strong> <span id="modalStudy"></span></p>
-            <p><strong>Tanggal Lahir:</strong> <span id="modalBirth"></span></p>
-            <p><strong>Negara:</strong> <span id="modalCountry"></span></p>
-        </div>
-    </div>
-
-    <script>
-        function showModal(name, fullName, study, birth, country) {
-            document.getElementById('modalName').innerText = name;
-            document.getElementById('modalFullName').innerText = fullName;
-            document.getElementById('modalStudy').innerText = study;
-            document.getElementById('modalBirth').innerText = birth;
-            document.getElementById('modalCountry').innerText = country;
-            document.getElementById('modal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('modal')) {
-                closeModal();
-            }
-        }
-    </script>
 </body>
 </html>
