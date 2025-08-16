@@ -36,6 +36,7 @@
             overflow: hidden;
             transition: transform 0.2s;
             cursor: pointer;
+            position: relative;
         }
         .card:hover {
             transform: scale(1.05);
@@ -58,6 +59,18 @@
         }
         .card-content span {
             font-weight: bold;
+        }
+        .instagram-link {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .instagram-link img {
+            width: 30px;
+            height: 30px;
+            transition: 0.3s;
+        }
+        .instagram-link img:hover {
+            transform: scale(1.2);
         }
         /* Modal */
         .modal {
@@ -106,6 +119,9 @@
             <div class="card-content">
                 <h2>Rivaldo</h2>
                 <p><span>Full Name:</span> Rivaldo Indra Yulian</p>
+                <a href="https://instagram.com/riv.ao" target="_blank" class="instagram-link" onclick="event.stopPropagation()">
+                    <img src="Instagram.png" alt="Instagram">
+                </a>
             </div>
         </div>
 
@@ -115,6 +131,9 @@
             <div class="card-content">
                 <h2>Aldo</h2>
                 <p><span>Full Name:</span> Aldo Wahyu Hendrawan</p>
+                <a href="https://instagram.com/aldology" target="_blank" class="instagram-link" onclick="event.stopPropagation()">
+                    <img src="Instagram.png" alt="Instagram">
+                </a>
             </div>
         </div>
 
@@ -124,6 +143,9 @@
             <div class="card-content">
                 <h2>Aura</h2>
                 <p><span>Full Name:</span> Atma Aura Baabil Tahtanirwane</p>
+                <a href="https://instagram.com/ouw.ra" target="_blank" class="instagram-link" onclick="event.stopPropagation()">
+                    <img src="Instagram.png" alt="Instagram">
+                </a>
             </div>
         </div>
     </div>
